@@ -110,7 +110,7 @@ const Orders = () => {
     //changes the waiter
     function changeWaiterForOrder(){
         changeWaiter.change = false
-        var url = "http://localhost:5000/waiter/update/" + changeWaiter.id
+        var url = "http://localhost:6000/waiter/update/" + changeWaiter.id
         axios.put(url, {
             "server": newWaiterName
         }).then(response => {
@@ -125,7 +125,7 @@ const Orders = () => {
     //changes the order
     function changeSingleOrder(){
         changeOrder.change = false;
-        var url = "http://localhost:5000/order/update/" + changeOrder.id
+        var url = "http://localhost:6000/order/update/" + changeOrder.id
         axios.put(url, newOrder)
             .then(response => {
             if(response.status == 200){
@@ -137,7 +137,7 @@ const Orders = () => {
     //creates a new order
     function addSingleOrder(){
         setAddNewOrder(false)
-        var url = "http://localhost:5000/order/create"
+        var url = "http://localhost:6000/order/create"
         axios.post(url, {
             "server": newOrder.server,
             "dish": newOrder.dish,
@@ -152,7 +152,7 @@ const Orders = () => {
 
     //gets all the orders
     function getAllOrders(){
-        var url = "http://localhost:5000/orders"
+        var url = "http://localhost:6000/orders"
         axios.get(url, {
             responseType: 'json'
         }).then(response => {
@@ -164,7 +164,7 @@ const Orders = () => {
 
     //deletes a single order
     function deleteSingleOrder(id){
-        var url = "http://localhost:5000/order/delete/" + id
+        var url = "http://localhost:6000/order/delete/" + id
         axios.delete(url, {
 
         }).then(response => {
